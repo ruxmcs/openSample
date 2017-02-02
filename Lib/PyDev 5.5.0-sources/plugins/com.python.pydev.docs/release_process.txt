@@ -1,0 +1,113 @@
+--------- For nightly ---------
+Update the version:
+
+x:
+cd x:\pydev
+python update_version.py 5.5.0
+
+X:\pydev\builders\org.python.pydev.build\build_cmd.bat
+C:\bin\Python27\python.exe X:\release_tools\pydev_uploader_bintray.py -s X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\repository -d https://api.bintray.com/content/fabioz/pydev/nightly/
+
+
+--------- For full build ---------
+
+		Update homepage
+			- index.rst
+			- download.contents.rst
+			- history_pydev.rst (move contents from index.rst if needed)
+
+		Update the version of all plugins to the new version.
+
+		Run:
+		    - Update version at W:\pydev\plugins\com.python.pydev.docs\build_both.py
+		    - W:\pydev\plugins\com.python.pydev.docs\build_both.py
+
+		Commit everything
+        Merge with master
+
+		Check that
+
+			C:\tools\Miniconda32\envs\py27_32\python -c "import pydevd"
+
+		throws an exception (it cannot be installed in the environment)
+
+		Create tab in cmdermini: X:\pydev\builders\org.python.pydev.build\build_cmd.bat
+
+		Copy features and plugins folders from X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\repository to X:\pydev_build\update_site_dir\updates
+
+copy X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\repository\features\*.jar X:\pydev_build\update_site_dir\updates\features /Y
+copy X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\repository\plugins\*.jar X:\pydev_build\update_site_dir\updates\plugins /Y
+
+		Update the site.xml at X:\pydev_build\update_site_dir\updates
+
+		** Create zips to distribute
+
+x:\
+cd X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\runnable
+"C:\Program Files\7-Zip\7z" a -tzip -r "PyDev 5.4.0.zip" features plugins
+cd X:\pydev_build\build_dir\pydev
+git archive -o "X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\runnable\PyDev 5.4.0-sources.zip" origin/master
+
+        ** Submit feature and sources .zip in folder X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\runnable to:
+
+p:\FileZilla\filezilla.exe sftp://fabioz,pydev@frs.sourceforge.net/home/pfs/project/p/py/pydev/pydev/ --local="X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\runnable"
+
+Note: check pageant if it does not connect.
+
+Check if the main download button points to the proper place (not to the sources) --
+https://sourceforge.net/projects/pydev/files/pydev/PyDev 5.4.0/ -- choose file > file info > set default.
+
+
+		** Add contents to the update site
+
+
+cdd X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\
+
+mkdir org.python.pydev.p2-repo-5.4.0-SNAPSHOT
+
+cd org.python.pydev.p2-repo-5.4.0-SNAPSHOT
+
+"C:\Program Files\7-Zip\7z" x ..\org.python.pydev.p2-repo-5.4.0-SNAPSHOT.zip
+
+c:\bin\Python27\python.exe X:\release_tools\pydev_uploader_bintray.py -s X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\org.python.pydev.p2-repo-5.4.0-SNAPSHOT -d https://api.bintray.com/content/fabioz/pydev/nightly/
+Note: if unable to send: remove at https://bintray.com/fabioz/pydev/pydev/nightly/edit add back at https://bintray.com/fabioz/pydev/pydev/new/version
+
+
+Create "5.4.0" version in "https://bintray.com/fabioz/pydev/pydev/new/version"
+Add "5.4.0" in X:\release_tools\pydev_uploader_bintray.py
+c:\bin\Python27\python.exe X:\release_tools\pydev_uploader_bintray.py -s X:\pydev_build\build_dir\pydev\features\org.python.pydev.p2-repo\target\org.python.pydev.p2-repo-5.4.0-SNAPSHOT -d https://api.bintray.com/content/fabioz/pydev/5.4.0/
+
+		** Update homepage:
+
+        robocopy X:\workspace_liclipse\Pydev\plugins\com.python.pydev.docs\merged_homepage\final X:\workspace_liclipse\pydev_homepage\ /xd .git /xd .openshift  /s
+        cd /D X:\workspace_liclipse\pydev_homepage\
+        
+robocopy X:\pydev\plugins\com.python.pydev.docs\merged_homepage\final X:\openshift\pydev.page2\ /xd .git /xd .openshift  /s
+cd /D X:\openshift\pydev.page2\
+mu st
+mu acp "Updated to 5.4.0"
+
+p:\FileZilla\filezilla.exe sftp://fabioz,pydev@frs.sourceforge.net/home/project-web/pydev/htdocs --local="x:\pydev\plugins\com.python.pydev.docs\merged_homepage\final"
+
+
+		** Tag repository:
+		  git tag pydev_5_4_0 -a -m "PyDev 5.4.0"
+		  git push --tags
+
+
+		** Add news in forum (same as e-mail)
+
+		** update version in eclipse marketplace: http://marketplace.eclipse.org/
+
+		** Add blog post
+
+		** Add to reddit: http://www.reddit.com/r/Python/submit
+
+		** Send e-mail
+
+		** Twitter
+
+        ** Update the versions:
+			x:
+			cd x:\pydev
+			python update_version.py 5.4.0

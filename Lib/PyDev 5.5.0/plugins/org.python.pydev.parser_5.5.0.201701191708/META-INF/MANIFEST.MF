@@ -1,0 +1,50 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.python.pydev.parser; singleton:=true
+Archiver-Version: Plexus Archiver
+Built-By: fabio
+Require-Bundle: org.junit;bundle-version="4.0.0";resolution:=optional,
+ org.eclipse.ui,org.eclipse.ui.ide,org.eclipse.core.runtime,org.eclips
+ e.core.resources,org.eclipse.jface.text,org.python.pydev.core;bundle-
+ version="[5.5.0,5.5.1)",org.eclipse.ui.editors,org.eclipse.ui.workben
+ ch.texteditor
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.python.pydev.parser,org.python.pydev.parser.fastpa
+ rser,org.python.pydev.parser.fastparser.grammar_fstrings_common,org.p
+ ython.pydev.parser.grammar24,org.python.pydev.parser.grammar25,org.py
+ thon.pydev.parser.grammar26,org.python.pydev.parser.grammar27,org.pyt
+ hon.pydev.parser.grammar30,org.python.pydev.parser.grammar_fstrings,o
+ rg.python.pydev.parser.grammarcommon,org.python.pydev.parser.jython,o
+ rg.python.pydev.parser.jython.ast,org.python.pydev.parser.jython.ast.
+ factory,org.python.pydev.parser.prettyprinter,org.python.pydev.parser
+ .prettyprinterv2,org.python.pydev.parser.visitors,org.python.pydev.pa
+ rser.visitors.comparator,org.python.pydev.parser.visitors.scope
+Bundle-Name: Parser Plug-in
+Bundle-Version: 5.5.0.201701191708
+Bundle-ClassPath: parser.jar
+Bundle-Localization: plugin
+Bundle-Activator: org.python.pydev.parser.ParserPlugin
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_77
+Eclipse-BundleShape: dir
+
+Name: schema/pydev_parser_observer.exsd
+SHA-256-Digest: udN0FNzmbxEpmwmTJjpVGwFEXbjSpoqrUOQK36WrpDM=
+
+Name: plugin.xml
+SHA-256-Digest: aOqkeA/EdSN/O8ZxIqGUbXBztq04CzDCT7xwG7QK5Yg=
+
+Name: META-INF/maven/org.python.pydev/org.python.pydev.parser/pom.xml
+SHA-256-Digest: bhtOOEAhtq16mMSN07G0hF9VCa9YFe0JWXmrnE5fEpU=
+
+Name: parser.jar
+SHA-256-Digest: bE3T3SLjV1kPw90sJ1Hj8o7oV//IU07Hs5lnCAn309Y=
+
+Name: LICENSE.txt
+SHA-256-Digest: J75t01G5GT6rkY9hiDNA+yh/SDVMI+VNinfwannMATI=
+
+Name: META-INF/maven/org.python.pydev/org.python.pydev.parser/pom.prop
+ erties
+SHA-256-Digest: 3orf1GwHbYvm5N/h9tIHTdNiQgUO3tukJAQNqxuklq8=
+

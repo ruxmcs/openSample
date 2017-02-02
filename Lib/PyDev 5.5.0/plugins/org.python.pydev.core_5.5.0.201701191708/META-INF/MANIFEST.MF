@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.python.pydev.core; singleton:=true
+Archiver-Version: Plexus Archiver
+Built-By: fabio
+Require-Bundle: org.junit;bundle-version="4.0.0";resolution:=optional,
+ org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.jface.text,org.ec
+ lipse.core.resources,org.eclipse.ui.workbench.texteditor,org.eclipse.
+ core.filebuffers,org.eclipse.ui.console,org.eclipse.core.variables,or
+ g.python.pydev.shared_core;bundle-version="[5.5.0,5.5.1)";visibility:
+ =reexport,org.python.pydev.shared_ui;bundle-version="[5.5.0,5.5.1)"
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Aptana
+Export-Package: org.python.pydev.core,org.python.pydev.core.cache,org.
+ python.pydev.core.concurrency,org.python.pydev.core.docutils,org.pyth
+ on.pydev.core.log,org.python.pydev.core.parser,org.python.pydev.core.
+ partition,org.python.pydev.core.performanceeval,org.python.pydev.core
+ .structure
+Bundle-Name: Core Plug-in
+Bundle-Version: 5.5.0.201701191708
+Bundle-ClassPath: core.jar
+Bundle-Localization: plugin
+Bundle-Activator: org.python.pydev.core.CorePlugin
+Created-By: Apache Maven 3.3.9
+Build-Jdk: 1.8.0_77
+Eclipse-BundleShape: dir
+
+Name: META-INF/maven/org.python.pydev/org.python.pydev.core/pom.proper
+ ties
+SHA-256-Digest: 6wDOKpX8xrjUIYizx0cBjQ2AyCs0fNDxnKBCvEjjkPU=
+
+Name: icons/python_logging.png
+SHA-256-Digest: 8a0vCAzniBxX0y4O5wY3Ye3Nu5hhQZG7IhfBb/etOlU=
+
+Name: META-INF/maven/org.python.pydev/org.python.pydev.core/pom.xml
+SHA-256-Digest: zIrjVpzyD57gJdWCh7+41e4ZU6GxrquYffaBVg/Zym4=
+
+Name: LICENSE.txt
+SHA-256-Digest: J75t01G5GT6rkY9hiDNA+yh/SDVMI+VNinfwannMATI=
+
+Name: core.jar
+SHA-256-Digest: ps+03Qp7J9gM/jQ3KdU63yGN5+nKzkE9DjzK3XcPC1U=
+
