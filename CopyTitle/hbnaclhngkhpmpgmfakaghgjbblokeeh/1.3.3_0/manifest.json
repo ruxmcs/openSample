@@ -1,0 +1,18 @@
+{
+   "background_page": "background.html",
+   "browser_action": {
+      "default_icon": "copyurl.png",
+      "default_title": "copy title+url to clipboard",
+      "popup": "popup.html"
+   },
+   "description": "Copy Url, Title+Url or Title+Url with tag( \u003Ca href=\"... ) to Clipbard",
+   "icons": {
+      "48": "copyurl.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVVq+/THXXlsZESc7W5g7kcXiFXiPQy73jDZJdV3v8DBCNEasDcWyCcL6PRdfLB4YtxjCEcgLT7zrXGobr7HSqqucqUNBJZeG47hLxlCky3IANVGAGzzgomSF+QNDIHWkkKoNKHIvYzuIa2tQRhsDOyII5l7kVpm55nlsPtziW2wIDAQAB",
+   "name": "Copy Title+URL to clipboard",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "http://goo.gl/*", "contextMenus" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.3.3"
+}

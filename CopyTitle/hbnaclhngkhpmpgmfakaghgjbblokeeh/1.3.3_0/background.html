@@ -1,0 +1,25 @@
+//In the background page:
+<html>
+  <script type="text/javascript" src="googl.js"></script>
+  <script type="text/javascript" src="copy.js"></script>
+  <script>
+
+function getDefinition() {
+}
+
+function onContextClick(info, tab) {	
+  //console.log("item " + info.menuItemId + " was clicked");
+  //console.log("info: " + JSON.stringify(info));
+  //console.log("tab: " + JSON.stringify(tab));
+  if( info["selectionText"] ){
+    copyselectiontitleshorten( info["selectionText"] );
+  }
+}
+
+var menu_id = chrome.contextMenus.create({"title": "Copy Selection, Title and URL(shorten)", "contexts":["selection"], "onclick": onContextClick});
+
+  </script>
+<body>
+<input id="hbnaclhngkhpmpgmfakaghgjbblokeeh" value="">
+</body>
+</html>
